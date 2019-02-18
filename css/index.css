@@ -1,3 +1,415 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+
+/*************************************************
+******                                       *****
+******    These Styles are for every page    *****
+******                                       *****
+**************************************************/
+
+
+.test {
+	border: 2px solid red;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 15px 0;
+	padding-top: 130px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: 94%;
+        margin: 0 3%;
+    }
+}
+
+@media (max-width: 500px){
+    .container {
+        margin-top: 270px;
+    }
+}
+
+.banner {
+    position: fixed;
+    width: 100%;
+	top: 0;
+	box-shadow: 2px 0 3px black;
+    background: rgba(255,255,255, 0.7);
+}
+
+@media (max-width: 800px) {
+    .banner {
+        position: absolute;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
+/* Styling our banner */
+.banner-wrap {
+    display: flex;
+	justify-content: space-between;
+    align-items: center;
+    
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+    .banner-wrap {
+        flex-direction: column-reverse;
+        padding-top: 30px;
+        width: 94%;
+        margin: 0 3%;
+    }
+}
+
+.banner .banner-wrap nav {
+	max-width: 1000px;
+    padding: 15px 0;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+    .banner .banner-wrap nav {
+        width: 95%;
+        margin: 22px auto 0;
+        font-size: 14px;
+    }
+}
+
+@Media (max-width: 500px){
+    .banner .banner-wrap nav{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin: 30px 0 0;
+    }
+}
+
+.banner .banner-wrap nav a {
+	display: inline-block;
+	font-family: inherit;
+	color: lightslategray;
+	text-decoration: none;
+
+	margin-left: 30px;
+}
+
+@Media (max-width: 800px){
+    .banner .banner-wrap nav a {
+        margin: 0;
+        padding: 15px 0;
+    }
+}
+
+@Media (max-width: 500px){
+    .banner .banner-wrap nav a {
+        width: 100%;
+        font-size: 24px;
+        padding: 0 auto;
+        
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+
+.banner .banner-wrap nav a:hover {
+    color: inherit;
+	transform: scale(1.1);
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* button Style */
+.container button {
+	background: inherit;
+	font-family: inherit;
+
+	border: 1.5px solid black;
+	width: 180px;
+	height: 30px;
+}
+
+@Media (max-width: 800px){
+    .container button {
+        height: 40px;
+        margin-bottom: 30px;
+    }
+}
+
+.container button:hover {
+	transform: scale(1.05);
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+.container footer small.copyright {
+	font-size: 13px;
+	text-align: center;
+	display: block;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+
+/*************************************************
+******                                       *****
+******    These Styles are for Index.html    *****
+******                                       *****
+**************************************************/
+
+
+/* styling our header content */
+
+.index header section {
+	/* flex container */
+	display: flex;
+	justify-content: space-around;
+	align-items: center
+
+}
+
+@Media (max-width: 800px){
+    .index header section {
+        justify-content: center;
+    }
+}
+
+.index header section div {
+	/* flex child */
+	text-align: center;
+}
+
+.index header section div.first h1 {
+	font-size: 80px;
+}
+
+@Media (max-width: 800px){
+    .index header section div.first h1 {
+        margin-top: 70px;
+        font-size: 70px;
+    }
+}
+
+@Media (max-width: 800px){
+    .index header section img {
+        display: none;
+    }
+}
+
+/* main-content */
+
+.index .main-content {
+	display: flex;
+	flex-direction: column;
+
+	margin: 30px 0;
+
+	border-top: 1.5px solid black;
+	border-bottom: 1.5px solid black;
+}
+
+/* 
+	styling our main content
+	2 sections @ once!!!
+	above-img | below-img
+*/
+
+.index .main-content div section {
+	/* 
+
+		above-img | below-img 
+		we're making both of these sections flex boxes
+
+	*/
+
+	display: flex;
+	padding: 30px 0;
+}
+
+@Media(max-width: 500px){
+    .index .main-content div section {
+        flex-direction: column;
+        align-items: center;
+
+        padding-top: 0;
+    }
+
+    /*this is in the same Query because it doesnt exist outside of it */
+
+    .index .main-content div section h2 {
+        margin-top: 30px;
+    }
+}
+
+.index .main-content section div{
+	/* 
+
+		above-img | below-img 
+		add a little padding so the content isnt rubbing each other
+
+	*/
+	padding-left: 15px;
+}
+
+/* middle-img | img */
+.index .main-content .middle-img {
+    width: 100%;
+    height: auto;
+	display: inline-block; /* lets this element join in the flex fun*/
+}
+
+/*************************************************
+******                                       *****
+******  These Styles are for Services.html   *****
+******                                       *****
+**************************************************/
+
+/* header styles */
+
+.services header img.services-header-img {
+	width: 100%;
+}
+
+.services header section{
+	margin: 30px 0;
+}
+
+.services header section h1 {
+	font-size: 30px;
+}
+
+/* main content block */
+
+.services section.main-content{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	padding: 50px 0 20px;
+	margin: 50px 0;
+	border-top: 1.5px solid black;
+	border-bottom: 1.5px solid black;
+}
+
+.services section .content-box {
+	border: 1.5px solid black;
+	background: rgb(238, 237, 237);
+	padding: 30px;
+	width: 48%;
+	margin-bottom: 30px;
+}
+
+.services section .content-box h2 {
+	font-size: 18px;
+}
+
+.services section .content-box p {
+	margin: 30px 0;
+}
+
+.services section .content-box button {
+	background: white;
+	border-radius: 6px;
+	height: 40px;
+}
+
+/* services page footer section */
+
+.services footer .footer-box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.services footer .footer-box .footer-content {
+	display: block;
+	width: 48%;
+}
+
+.services footer .footer-box .footer-content * {
+	margin: 20px 0;
+}
+
+.services footer .footer-box .footer-content h1 {
+	margin-top: 0px;
+}
+
+.services footer .footer-box .footer-content ul {
+	list-style-type: square;
+	margin-left: 20px;
+}
+
+.services footer small.copyright {
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
 
