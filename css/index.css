@@ -336,6 +336,18 @@ h1, h2, h3, h4, h5 {
 
 /* header styles */
 
+@media(max-width: 800px){
+    .services header {
+        margin-top: 60px;
+    }
+}
+
+@media(max-width: 500px){
+    .services header {
+        margin-top: 70px;
+    }
+}
+
 .services header img.services-header-img {
 	width: 100%;
 }
@@ -361,12 +373,24 @@ h1, h2, h3, h4, h5 {
 	border-bottom: 1.5px solid black;
 }
 
+@media(max-width: 500px){
+    .services section.main-content{
+        justify-content: center;
+    }
+}
+
 .services section .content-box {
 	border: 1.5px solid black;
 	background: rgb(238, 237, 237);
 	padding: 30px;
 	width: 48%;
 	margin-bottom: 30px;
+}
+
+@media(max-width: 500px){
+    .services section .content-box {
+        width: 94%;
+    }
 }
 
 .services section .content-box h2 {
@@ -383,6 +407,15 @@ h1, h2, h3, h4, h5 {
 	height: 40px;
 }
 
+@media(max-width: 500px){
+    .services section .content-box button {
+        width: 95%;
+        height: 70px;
+        margin: auto;
+        font-size: 24px;
+    }
+}
+
 /* services page footer section */
 
 .services footer .footer-box {
@@ -390,9 +423,22 @@ h1, h2, h3, h4, h5 {
 	justify-content: space-between;
 }
 
+@media(max-width: 500px){
+    .services footer .footer-box {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .services footer .footer-box .footer-content {
 	display: block;
 	width: 48%;
+}
+
+@media(max-width: 500px){
+    .services footer .footer-box .footer-content {
+        width: 95%;
+    }
 }
 
 .services footer .footer-box .footer-content * {
